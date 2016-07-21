@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" deactivate="deactivate" modified="modify" name="HttpServiceComponent">
+   <reference bind="bindConfigAdmin" cardinality="1..1" interface="org.osgi.service.cm.ConfigurationAdmin" name="ConfigurationAdmin" policy="dynamic" unbind="unbindConfigAdmin"/>
+   <reference bind="bindHttpService" cardinality="0..1" interface="org.osgi.service.http.HttpService" name="SimpleHttpServlet" policy="dynamic" unbind="unbindHttpService"/>
+   <implementation class="org.wimi.jetty.tutorial.HttpServiceServiceComponent"/>
+</scr:component>

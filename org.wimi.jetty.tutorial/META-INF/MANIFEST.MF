@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tutorial
+Bundle-SymbolicName: org.wimi.jetty.tutorial
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.wimi.jetty.tutorial.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.servlet;version="2.5.0",
+ javax.servlet.http;version="2.5.0",
+ org.osgi.framework;version="1.3.0",
+ org.osgi.service.cm;version="1.5.0",
+ org.osgi.service.component;version="1.2.2",
+ org.osgi.service.component.annotations;version="1.2.0";resolution:=optional,
+ org.osgi.service.http;version="1.2.1"
+Bundle-ActivationPolicy: lazy
+Service-Component: OSGI-INF/HttpServiceComponent.xml

@@ -1,0 +1,45 @@
+<configuration debug="true" scan="true" scanPeriod="5 seconds">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
+			by default -->
+		<encoder>
+			<pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%level] [%thread] %logger{35} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${config.location}/../log/omnfind.log</file>
+		<!--
+		<append>true</append>
+		<maxFileSize>10MB</maxFileSize>
+		<maxBackupIndex>25</maxBackupIndex>
+		 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>omnfind.%d{yyyy-MM-dd}.log</fileNamePattern>
+
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>
+				%d{yyyy-MM-dd_HH:mm:ss.SSS} [%level] [%thread] %logger - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="org" level="DEBUG">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<root level="DEBUG">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

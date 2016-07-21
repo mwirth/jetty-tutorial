@@ -1,0 +1,11 @@
+org.osgi.service.http.port = 8089
+
+service.pid=org.eclipse.equinox.http.servlet
+http.port = 8089
+
+#org.eclipse.equinox.http.jetty.https.enabled=true
+#org.osgi.service.http.port.secure=8443
+
+#org.eclipse.equinox.http.jetty.ssl.keystore=/Users/mwirth/dev/tools/kse-52/store/keystore
+#org.eclipse.equinox.http.jetty.ssl.password=keykey
+#org.eclipse.equinox.http.jetty.ssl.keypassword=keykey
