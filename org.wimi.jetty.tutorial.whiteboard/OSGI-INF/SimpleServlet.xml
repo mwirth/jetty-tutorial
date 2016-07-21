@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" modified="modify" name="SimpleServlet">
+   <property name="osgi.http.whiteboard.servlet.pattern" value="/white"/>
+   <properties entry="configuration/SimpleServlet.cfg"/>
+   <service>
+      <provide interface="javax.servlet.Servlet"/>
+   </service>
+   <implementation class="org.wimi.jetty.tutorial.whiteboard.SimpleServlet"/>
+</scr:component>

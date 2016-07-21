@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Whiteboard
+Bundle-SymbolicName: org.wimi.jetty.tutorial.whiteboard
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.wimi.jetty.tutorial.whiteboard.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: javax.servlet;version="3.1.0",
+ javax.servlet.http,
+ org.osgi.framework;version="1.8.0",
+ org.osgi.service.cm;version="1.5.0",
+ org.osgi.service.component;version="1.2.2",
+ org.osgi.service.component.annotations;version="1.2.0";resolution:=optional
+Service-Component: OSGI-INF/SimpleServlet.xml

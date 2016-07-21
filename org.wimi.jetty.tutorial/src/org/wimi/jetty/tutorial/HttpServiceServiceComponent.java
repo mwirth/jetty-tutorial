@@ -1,13 +1,10 @@
 package org.wimi.jetty.tutorial;
 
-import java.io.IOException;
 import java.util.Dictionary;
 import java.util.Enumeration;
-import java.util.Hashtable;
 
 import javax.servlet.ServletException;
 
-import org.osgi.service.cm.Configuration;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
@@ -29,36 +26,36 @@ public class HttpServiceServiceComponent
 	@Reference(name = "ConfigurationAdmin", policy = ReferencePolicy.DYNAMIC, cardinality = ReferenceCardinality.MANDATORY, unbind = "unbindConfigAdmin")
 	protected void bindConfigAdmin(ConfigurationAdmin configAdmin)
 	{
-		try
-		{
-			// Configuration[] listConfigurations = configAdmin.listConfigurations(null);
-			// for (Configuration configuration : listConfigurations)
-			// {
-			// Dictionary<String, Object> properties = configuration.getProperties();
-			// System.out.println(properties);
-			//
-			// }
+		// Configuration[] listConfigurations = configAdmin.listConfigurations(null);
+		// for (Configuration configuration : listConfigurations)
+		// {
+		// Dictionary<String, Object> properties = configuration.getProperties();
+		// System.out.println(properties);
+		//
+		// }
 
-			Configuration configBla = configAdmin.getConfiguration("bla.blub", null);
-			Configuration configFelix = configAdmin.getConfiguration("org.apache.felix.http", null);
-			Configuration configJetty = configAdmin.getConfiguration("org.eclipse.equinox.http.jetty.config", null);
-			Configuration configHttpServlet = configAdmin.getConfiguration("org.eclipse.equinox.http.servlet", null);
-
-			Dictionary<String, Object> props = configHttpServlet.getProperties();
-			if (props == null)
-			{
-				props = new Hashtable<String, Object>();
-				props.put("service.pid", "org.eclipse.equinox.http.servlet");
-			}
-			props.put("org.osgi.service.http.port", 8089);
-			props.put("http.port", 8089);
-			configHttpServlet.update(props);
-		}
-		catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		// try
+		// {
+		// Configuration configBla = configAdmin.getConfiguration("bla.blub", null);
+		// Configuration configFelix = configAdmin.getConfiguration("org.apache.felix.http", null);
+		// Configuration configJetty = configAdmin.getConfiguration("org.eclipse.equinox.http.jetty.config", null);
+		// Configuration configHttpServlet = configAdmin.getConfiguration("org.eclipse.equinox.http.servlet", null);
+		//
+		// Dictionary<String, Object> props = configHttpServlet.getProperties();
+		// if (props == null)
+		// {
+		// props = new Hashtable<String, Object>();
+		// props.put("service.pid", "org.eclipse.equinox.http.servlet");
+		// }
+		// props.put("org.osgi.service.http.port", 8089);
+		// props.put("http.port", 8089);
+		// configHttpServlet.update(props);
+		// }
+		// catch (IOException e)
+		// {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 
 	}
 
